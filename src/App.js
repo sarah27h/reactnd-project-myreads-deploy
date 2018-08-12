@@ -3,7 +3,8 @@ import * as BooksAPI from './BooksAPI'
 import './App.css'
 import SearchBooks from './SearchBooks'
 import ListBooks from './ListBooks'
-import { Route } from 'react-router-dom';
+// import { Route } from 'react-router-dom';
+import { BrowserRouter as Router} from 'react-router-dom';
 
 class BooksApp extends React.Component {
   state = {
