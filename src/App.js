@@ -4,7 +4,6 @@ import './App.css'
 import SearchBooks from './SearchBooks'
 import ListBooks from './ListBooks'
 import { Route } from 'react-router-dom';
-import { BrowserRouter as Router} from 'react-router-dom';
 
 class BooksApp extends React.Component {
   state = {
@@ -51,15 +50,10 @@ shelfChange = (book, shelf, value) => {
           onShelfChange={this.shelfChange}/>
         )}/>
 
-        {/* <Route exact path={`/`} 
-        render={ (routerProps) => < Home routerProps={routerProps}/>} 
-        /> */}
-
-        <Route exact path='/' render={(routerProps) => (
+        <Route exact path='/' render={() => (
           <ListBooks 
           books={this.state.books}
-          onShelfChange={this.shelfChange}
-          />
+          onShelfChange={this.shelfChange}/>
         )}/>
 
       </div>

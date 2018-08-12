@@ -1,11 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-// import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import './index.css'
-import { BrowserRouter as Router } from 'react-router-dom';
-ReactDOM.render(
-<Router basename={process.env.PUBLIC_URL}>< App /></Router>, document.getElementById('root')
-);
+import { Router } from 'react-router';
+import createHashHistory from 'history/createHashHistory';
 
-// ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'))
+const hashHistory = createHashHistory({ basename: process.env.PUBLIC_URL });
+
+ReactDOM.render(
+    <Router history={hashHistory}>
+    <App /></Router>,
+    document.getElementById('root')
+)
+
