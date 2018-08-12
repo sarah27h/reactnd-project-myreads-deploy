@@ -3,7 +3,7 @@ import * as BooksAPI from './BooksAPI'
 import './App.css'
 import SearchBooks from './SearchBooks'
 import ListBooks from './ListBooks'
-// import { Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { BrowserRouter as Router} from 'react-router-dom';
 
 class BooksApp extends React.Component {
@@ -51,10 +51,15 @@ shelfChange = (book, shelf, value) => {
           onShelfChange={this.shelfChange}/>
         )}/>
 
-        <Route exact path='/' render={() => (
+        {/* <Route exact path={`/`} 
+        render={ (routerProps) => < Home routerProps={routerProps}/>} 
+        /> */}
+
+        <Route exact path='/' render={(routerProps) => (
           <ListBooks 
           books={this.state.books}
-          onShelfChange={this.shelfChange}/>
+          onShelfChange={this.shelfChange}
+          />
         )}/>
 
       </div>
